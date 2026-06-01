@@ -42,6 +42,8 @@ Q: Quit
     else:
         if user_input == "1":
             seller_functions.yearRange(books)
+        elif user_input == "2":
+            seller_functions.monthYear(books)
 
 if tries <= 1:
     print("Number of tries exhausted")
