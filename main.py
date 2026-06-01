@@ -44,7 +44,14 @@ Q: Quit
             seller_functions.yearRange(books)
         elif user_input == "2":
             seller_functions.monthYear(books)
+        elif user_input == "3":
+            seller_functions.searchbyAuthor(books)
+        elif user_input == "4":
+            seller_functions.searchbyTitle(books)
+        elif user_input == "Q":
+            print("Quit")
 
+    
 if tries <= 1:
     print("Number of tries exhausted")
 
