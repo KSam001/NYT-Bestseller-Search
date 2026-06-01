@@ -13,8 +13,7 @@ def monthYear(books):
    input_month = int(input("Enter month of year in number: "))
    input_year = int(input("Enter year: "))
 
-   match_found = False
-   # why do you need the match_found flag? What's its role?
+
    for book in books:
       date_part = book.get("date").split("/")
       
@@ -22,10 +21,29 @@ def monthYear(books):
       year = int(date_part[2])
 
       if month == input_month and year == input_year:
-         print(f'{book.get("title")}, by {book.get("author")} ({book.get("date")})')
-         match_found = True
+         print(f'{book.get("title")}, by {book.get("author")} ({book.get("date")})')   
 
-# Overall, the implementation is on point.
+
+def searchbyAuthor(books):
+   search_input = input("Enter author name: ")
+   author_input = search_input.lower()
+
+   for book in books:
+      author_name = book.get("author")
+
+      if author_input in author_name.lower():
+         print(f'{book.get("title")}, by {author_name} ({book.get("date")})')
+
+
+def searchbyTitle(books):
+   title_input = input("Enter title: ")
+   search_title = title_input.lower()
+
+   for book in books:
+      book_title = book.get("title")
+      if search_title in book_title.lower():
+         print(f'{book_title}, by {book.get("author")} ({book.get("date")})')
+   
 
 
 
